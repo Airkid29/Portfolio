@@ -1,5 +1,5 @@
 /* ===== CURSOR ===== */
-const cursor = document.getElementById('cursor');
+/* const cursor = document.getElementById('cursor');
 const cursorDot = document.getElementById('cursor-dot');
 
 if (window.matchMedia('(pointer: fine)').matches) {
@@ -14,7 +14,7 @@ if (window.matchMedia('(pointer: fine)').matches) {
     el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
     el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
   });
-}
+}*/
 
 /* ===== NAV ===== */
 const nav = document.getElementById('nav');
