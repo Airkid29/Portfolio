@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rachid BAWA — Dev Frontend</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SK0WMFD97D"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-SK0WMFD97D');</script>
+</head>
+<body>
+
+  <!-- CURSOR -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-dot" id="cursor-dot"></div>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <a href="#home" class="nav-brand">Rach<span>_</span></a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#about" class="nav-link">À propos</a></li>
+      <li><a href="#projects" class="nav-link">Projets</a></li>
+      <li><a href="#education" class="nav-link">Parcours</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+    <a href="./Assets/docs/Rachid_BAWA_CV_Dev .pdf" target="_blank" class="nav-cta">Mon CV</a>
+    <button class="nav-burger" id="nav-burger" aria-label="Menu">
+      <span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <div class="hero-bg">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-tag reveal">
+        <span class="dot"></span> Disponible pour des missions
+      </div>
+      <h1 class="hero-title reveal">
+        <span class="line">Rachid</span>
+        <span class="line accent">BAWA</span>
+      </h1>
+      <p class="hero-sub reveal">
+        Développeur Front-End & passionné de cybersécurité.<br>
+        Je transforme des idées en expériences numériques <em>captivantes</em>.
+      </p>
+      <div class="hero-actions reveal">
+        <a href="#contact" class="btn-primary">Me contacter</a>
+        <a href="#projects" class="btn-ghost">Voir mes projets</a>
+      </div>
+      <div class="hero-socials reveal">
+        <a href="https://github.com/Airkid29" target="_blank" rel="noopener" aria-label="GitHub"><i class="uil uil-github-alt"></i></a>
+        <a href="https://www.linkedin.com/in/abdoul-rachid-bawa-/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="uil uil-linkedin-alt"></i></a>
+        <a href="https://www.instagram.com/rach_code/" target="_blank" rel="noopener" aria-label="Instagram"><i class="uil uil-instagram"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=100069793652164" target="_blank" rel="noopener" aria-label="Facebook"><i class="uil uil-facebook"></i></a>
+      </div>
+    </div>
+    <div class="hero-image reveal">
+      <div class="image-frame">
+        <img src="./Assets/images/Me.jpg" alt="Rachid BAWA">
+      </div>
+      <div class="image-badge">
+        <i class="uil uil-award"></i>
+        <span>1er — Hackathon IT</span>
+      </div>
+    </div>
+    <a href="#about" class="scroll-cue" aria-label="Scroll down">
+      <i class="uil uil-arrow-down"></i>
+    </a>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section about">
+    <div class="container">
+      <div class="section-label reveal">01 — À propos</div>
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <h2 class="section-title">Développeur web &amp; explorateur du digital</h2>
+          <p>Je suis un développeur web passionné qui allie expertise technique et créativité pour créer des interfaces intuitives et ergonomiques. J'apprends également la cybersécurité et je suis à l'aise avec l'administration des systèmes et réseaux.</p>
+          <p>Mon objectif : transformer des idées en expériences numériques captivantes et fonctionnelles.</p>
+          <a href="./Assets/docs/Rachid_BAWA_CV_Dev .pdf" target="_blank" class="btn-primary" style="margin-top:1.5rem;display:inline-flex;align-items:center;gap:.5rem;">Télécharger CV <i class="uil uil-import"></i></a>
+        </div>
+        <div class="about-skills reveal">
+          <div class="skills-block">
+            <h4>Programmation</h4>
+            <div class="skill-tags">
+              <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>React.js</span>
+              <span>Bootstrap</span><span>PHP</span><span>Python</span><span>C/C++</span>
+              <span>MySQL</span><span>PostgreSQL</span><span>Docker</span><span>Git</span>
+            </div>
+          </div>
+          <div class="skills-block">
+            <h4>Sécurité &amp; Réseaux</h4>
+            <div class="skill-tags">
+              <span>Linux</span><span>Windows Server</span><span>Wireshark</span>
+              <span>Burp Suite</span><span>Metasploit</span><span>Nmap</span>
+              <span>ELK</span><span>WAZUH</span><span>Hashcat</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="section projects">
+    <div class="container">
+      <div class="section-label reveal">02 — Projets</div>
+      <h2 class="section-title reveal">Ce que j'ai construit</h2>
+      <div class="stats-row reveal">
+        <div class="stat"><strong>15+</strong><span>Projets</span></div>
+        <div class="stat"><strong>3+</strong><span>Clients</span></div>
+        <div class="stat"><strong>10+</strong><span>Mois d'XP</span></div>
+      </div>
+
+      <div class="projects-grid">
+
+        <div class="project-card reveal" data-category="web">
+          <div class="project-img">
+            <img src="Assets/images/startuperschool.png" alt="StartuperSchool">
+            <div class="project-overlay-links">
+              <a href="https://startuperschool.netlify.app" target="_blank" rel="noopener">Voir le projet <i class="uil uil-arrow-up-right"></i></a>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-meta">
+              <span class="tag">HTML</span><span class="tag">Bootstrap</span><span class="tag">JS</span>
+            </div>
+            <h3>StartuperSchool</h3>
+            <p>Guide étudiants et jeunes entrepreneurs vers le succès entrepreneurial — formations, coaching, réseau international.</p>
+          </div>
+        </div>
+
+        <div class="project-card reveal" data-category="web">
+          <div class="project-img">
+            <img src="Assets/images/orga.png" alt="Orga Africa">
+            <div class="project-overlay-links">
+              <a href="https://orga1.netlify.app/" target="_blank" rel="noopener">Voir le projet <i class="uil uil-arrow-up-right"></i></a>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-meta">
+              <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span>
+            </div>
+            <h3>Orga-Africa</h3>
+            <p>Site vitrine professionnel pour Orga Africa. Interface claire, responsive et orientée conversion.</p>
+          </div>
+        </div>
+
+        <div class="project-card reveal" data-category="web">
+          <div class="project-img">
+            <img src="Assets/images/absence.png" alt="App Gestion Université">
+            <div class="project-overlay-links">
+              <a href="https://github.com/Ltk-Mxz/kadodo" target="_blank" rel="noopener">Voir le code <i class="uil uil-arrow-up-right"></i></a>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-meta">
+              <span class="tag">PHP</span><span class="tag">MySQL</span><span class="tag">Bootstrap</span>
+            </div>
+            <h3>App Web — Université</h3>
+            <p>Gestion complète d'une université : étudiants, cours, notes et absences en une interface simple.</p>
+          </div>
+        </div>
+
+        <div class="project-card reveal" data-category="app">
+          <div class="project-img">
+            <img src="./Assets/images/gestion_pharma.png" alt="Pharmacy Management">
+            <div class="project-overlay-links">
+              <a href="https://github.com/Airkid29/GesPharma" target="_blank" rel="noopener">Voir le code <i class="uil uil-arrow-up-right"></i></a>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-meta">
+              <span class="tag">Python</span><span class="tag">Tkinter</span>
+            </div>
+            <h3>Pharmacy Management</h3>
+            <p>Application desktop complète pour la gestion quotidienne d'une pharmacie.</p>
+          </div>
+        </div>
+
+        <div class="project-card reveal" data-category="app">
+          <div class="project-img">
+            <img src="./Assets/images/parc_auto.png" alt="Gestion Parc Auto">
+            <div class="project-overlay-links">
+              <a href="https://github.com/Airkid29/GesParking" target="_blank" rel="noopener">Voir le code <i class="uil uil-arrow-up-right"></i></a>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-meta">
+              <span class="tag">PHP</span><span class="tag">MySQL</span><span class="tag">Bootstrap</span>
+            </div>
+            <h3>Gestion Parc Automobile</h3>
+            <p>Application web pour la gestion complète d'un parc automobile.</p>
+          </div>
+        </div>
+
+        <div class="project-card reveal" data-category="web">
+          <div class="project-img">
+            <img src="Assets/images/portfolio_hughes.png" alt="Portfolio Hughes">
+            <div class="project-overlay-links">
+              <a href="https://bassimswehuguesbamassi.netlify.app/" target="_blank" rel="noopener">Voir le projet <i class="uil uil-arrow-up-right"></i></a>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-meta">
+              <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span>
+            </div>
+            <h3>Portfolio — Hughes BAMASSI</h3>
+            <p>Portfolio personnel conçu pour un photographe/créatif, design épuré et immersif.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION & EXPERIENCE -->
+  <section id="education" class="section education">
+    <div class="container">
+      <div class="section-label reveal">03 — Parcours</div>
+      <h2 class="section-title reveal">Formation &amp; Expériences</h2>
+      <div class="timeline-grid">
+
+        <div class="timeline-col reveal">
+          <h3 class="timeline-col-title"><i class="uil uil-graduation-cap"></i> Formation</h3>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="tl-dot"></div>
+              <div class="tl-content">
+                <span class="tl-date">Juil. 2025 — Aujourd'hui</span>
+                <strong>Développement Mobile</strong>
+                <p>Power Learn Academy</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="tl-dot"></div>
+              <div class="tl-content">
+                <span class="tl-date">2023 — Aujourd'hui</span>
+                <strong>Licence Informatique</strong>
+                <p>École Supérieure des Affaires</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="tl-dot"></div>
+              <div class="tl-content">
+                <span class="tl-date">Août 2024</span>
+                <strong>Marketing Digital</strong>
+                <p>Académie La Forge</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="tl-dot"></div>
+              <div class="tl-content">
+                <span class="tl-date">2016 — 2023</span>
+                <strong>Baccalauréat D</strong>
+                <p>CPL "THE WISE"</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-col reveal">
+          <h3 class="timeline-col-title"><i class="uil uil-briefcase"></i> Expériences</h3>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="tl-dot active"></div>
+              <div class="tl-content">
+                <span class="tl-date">Mars 2026 — Aujourd'hui</span>
+                <strong>Stagiaire Dev Web</strong>
+                <p><a href="https://www.linkedin.com/company/darollo-technologies-corporation/" target="_blank" rel="noopener">Darollo Tech Corporation</a></p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="tl-dot active"></div>
+              <div class="tl-content">
+                <span class="tl-date">Juin 2025 — Aujourd'hui</span>
+                <strong>Freelance Dev Frontend</strong>
+                <p>Création de sites pour particuliers et PME.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="tl-dot"></div>
+              <div class="tl-content">
+                <span class="tl-date">Juil. 2025 — Jan. 2026</span>
+                <strong>Développeur Web Frontend</strong>
+                <p><a href="https://orga-africa.com/" target="_blank" rel="noopener">Orga Africa</a></p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="tl-dot"></div>
+              <div class="tl-content">
+                <span class="tl-date">Mai 2025</span>
+                <strong>🏆 1ère place — Hackathon IT</strong>
+                <p>Lomé Business School — site de cours en ligne + chatbot</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="tl-dot"></div>
+              <div class="tl-content">
+                <span class="tl-date">Nov. 2025</span>
+                <strong>Demi-finaliste AI4Youth</strong>
+                <p>Solutions innovantes utilisant l'IA</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="tl-dot"></div>
+              <div class="tl-content">
+                <span class="tl-date">Oct. 2024</span>
+                <strong>Hackathon Climathon</strong>
+                <p>Impact Hub — transformation d'ordures en objets réutilisables</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section contact">
+    <div class="container">
+      <div class="section-label reveal">04 — Contact</div>
+      <h2 class="section-title reveal">Travaillons ensemble</h2>
+      <p class="contact-sub reveal">Un projet en tête ? Une idée à concrétiser ? Je suis disponible.</p>
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <a href="mailto:rachidbawa80@gmail.com" class="contact-card">
+            <i class="uil uil-envelope"></i>
+            <div>
+              <span>Email</span>
+              <strong>rachidbawa80@gmail.com</strong>
+            </div>
+          </a>
+          <a href="tel:+22892521296" class="contact-card">
+            <i class="uil uil-phone"></i>
+            <div>
+              <span>Téléphone</span>
+              <strong>+228 92521296</strong>
+            </div>
+          </a>
+          <div class="contact-socials">
+            <a href="https://github.com/Airkid29" target="_blank" rel="noopener" aria-label="GitHub"><i class="uil uil-github-alt"></i></a>
+            <a href="https://www.linkedin.com/in/abdoul-rachid-bawa-/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="uil uil-linkedin-alt"></i></a>
+            <a href="https://www.instagram.com/rach_code/" target="_blank" rel="noopener" aria-label="Instagram"><i class="uil uil-instagram"></i></a>
+          </div>
+        </div>
+        <form action="https://formspree.io/f/mgvzyjzy" method="POST" class="contact-form reveal">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="nom">Nom</label>
+              <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="votre@email.com" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Décrivez votre projet..." required></textarea>
+          </div>
+          <button type="submit" class="btn-primary">Envoyer <i class="uil uil-message"></i></button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-inner">
+      <a href="#home" class="footer-brand">Rach<span>_</span></a>
+      <p>© 2026 Rachid BAWA — Tous droits réservés</p>
+      <div class="footer-links">
+        <a href="#about">À propos</a>
+        <a href="#projects">Projets</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="main.js"></script>
+</body>
+</html>
