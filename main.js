@@ -118,3 +118,38 @@ if (form) {
     }
   });
 }
+
+/* ===== GOOGLE ANALYTICS EVENTS ===== */
+function trackAnalyticsEvent(action, category, label) {
+  if (typeof gtag === 'function') {
+    gtag('event', action, {
+      event_category: category,
+      event_label: label,
+      transport_type: 'beacon'
+    });
+  }
+}
+
+const trackClickSelectors = [
+  '.nav-cta',
+  '.hero-actions a',
+  '.project-overlay-links a',
+  '.hero-socials a',
+  'a[href$=".pdf"]',
+  'a[href^="#"]'
+];
+trackClickSelectors.forEach((selector) => {
+  document.querySelectorAll(selector).forEach((el) => {
+    el.addEventListener('click', () => {
+      const label = el.textContent.trim() || el.href;
+      trackAnalyticsEvent('click', 'interaction', `${selector} - ${label}`);
+    });
+  });
+});
+
+const contactForm = document.querySelector('.contact-form');
+if (contactForm) {
+  contactForm.addEventListener('submit', () => {
+    trackAnalyticsEvent('submit', 'contact_form', 'Formulaire de contact envoyé');
+  });
+}
