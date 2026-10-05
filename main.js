@@ -133,7 +133,7 @@ function trackAnalyticsEvent(action, category, label) {
 const trackClickSelectors = [
   '.nav-cta',
   '.hero-actions a',
-  '.project-overlay-links a',
+  '.project-link',
   '.hero-socials a',
   'a[href$=".pdf"]',
   'a[href^="#"]'
