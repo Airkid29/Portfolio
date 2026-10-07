@@ -78,6 +78,62 @@ const revealObserver = new IntersectionObserver((entries) => {
 
 revealEls.forEach(el => revealObserver.observe(el));
 
+/* ===== HACKATHON PHOTO LIGHTBOX ===== */
+const hackathonLightbox = document.querySelector('.hackathon-lightbox');
+if (hackathonLightbox) {
+  const lightboxImage = hackathonLightbox.querySelector('.lightbox-image');
+  const lightboxCaption = hackathonLightbox.querySelector('.lightbox-caption');
+  const lightboxClose = hackathonLightbox.querySelector('.lightbox-close');
+  const hackathonPhotos = document.querySelectorAll('.hackathon-photo');
+  let currentGallery = [];
+  let currentPhotoIndex = 0;
+  let currentHackathon = '';
+
+  function showHackathonPhoto(index) {
+    currentPhotoIndex = (index + currentGallery.length) % currentGallery.length;
+    const photo = currentGallery[currentPhotoIndex];
+    lightboxImage.src = photo.currentSrc || photo.src;
+    lightboxImage.alt = photo.alt;
+    lightboxCaption.textContent = `${currentHackathon} — ${currentPhotoIndex + 1} / ${currentGallery.length}`;
+  }
+
+  hackathonPhotos.forEach((button) => {
+    button.addEventListener('click', () => {
+      const gallery = button.closest('.hackathon-gallery');
+      const card = button.closest('.hackathon-card');
+      currentGallery = Array.from(gallery.querySelectorAll('img'));
+      currentPhotoIndex = currentGallery.indexOf(button.querySelector('img'));
+      currentHackathon = card.querySelector('h3').textContent.trim();
+      showHackathonPhoto(currentPhotoIndex);
+      hackathonLightbox.showModal();
+      lightboxClose.focus();
+    });
+  });
+
+  hackathonLightbox.querySelector('.lightbox-prev').addEventListener('click', () => {
+    showHackathonPhoto(currentPhotoIndex - 1);
+  });
+  hackathonLightbox.querySelector('.lightbox-next').addEventListener('click', () => {
+    showHackathonPhoto(currentPhotoIndex + 1);
+  });
+  lightboxClose.addEventListener('click', () => hackathonLightbox.close());
+  hackathonLightbox.addEventListener('click', (event) => {
+    if (event.target === hackathonLightbox) hackathonLightbox.close();
+  });
+  hackathonLightbox.addEventListener('keydown', (event) => {
+    if (event.key === 'ArrowLeft') {
+      event.preventDefault();
+      showHackathonPhoto(currentPhotoIndex - 1);
+    } else if (event.key === 'ArrowRight') {
+      event.preventDefault();
+      showHackathonPhoto(currentPhotoIndex + 1);
+    } else if (event.key === 'Escape') {
+      event.preventDefault();
+      hackathonLightbox.close();
+    }
+  });
+}
+
 /* ===== CONTACT FORM FEEDBACK ===== */
 const form = document.querySelector('.contact-form');
 if (form) {

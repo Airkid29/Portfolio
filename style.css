@@ -394,6 +394,11 @@ body.cursor-hover .cursor {
 
 /* ===== EDUCATION ===== */
 .education { background: var(--bg-2); }
+.section-intro {
+  color: var(--text-2);
+  max-width: 680px;
+  margin: -1rem 0 2rem;
+}
 .timeline-grid {
   display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
 }
@@ -434,6 +439,247 @@ body.cursor-hover .cursor {
 .tl-content p { font-size: 0.82rem; color: var(--text-2); }
 .tl-content a { color: var(--accent-2); transition: opacity 0.2s; }
 .tl-content a:hover { opacity: 0.8; }
+
+/* ===== HACKATHONS ===== */
+.hackathons { background: var(--bg-2); }
+.hackathons-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+.hackathon-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 390px;
+  padding: 1.35rem;
+  background: linear-gradient(145deg, rgba(108,99,255,0.08), transparent 45%), var(--surface);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.16);
+  transition: transform 0.25s var(--ease), border-color 0.25s, box-shadow 0.25s;
+}
+.hackathon-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(108,99,255,0.48);
+  box-shadow: 0 18px 38px rgba(0,0,0,0.25);
+}
+.hackathon-card-top {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  width: fit-content;
+  max-width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.45rem 0.7rem;
+  border: 1px solid rgba(0,212,170,0.2);
+  border-radius: 999px;
+  background: rgba(0,212,170,0.07);
+  color: var(--accent-2);
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+.hackathon-card-top i { flex: 0 0 auto; font-size: 1rem; }
+.hackathon-card-top span { line-height: 1.35; }
+.hackathon-card > .tl-date {
+  margin-bottom: 0.35rem;
+  color: var(--accent);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.hackathon-card h3,
+.volunteer-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  line-height: 1.35;
+  margin-bottom: 0.45rem;
+}
+.hackathon-card h3 { min-height: 2.85em; }
+.hackathon-card h3 a { transition: color 0.2s; }
+.hackathon-card h3 a:hover { color: var(--accent-2); }
+.hackathon-card > p,
+.volunteer-card p {
+  color: var(--text-2);
+  font-size: 0.86rem;
+  line-height: 1.55;
+}
+.hackathon-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.65rem;
+  margin-top: auto;
+  padding-top: 1.35rem;
+}
+.hackathon-gallery--three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.hackathon-photo {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding: 0;
+  aspect-ratio: 1.45;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 11px;
+  background: var(--surface-2);
+  cursor: zoom-in;
+}
+.hackathon-photo:focus-visible {
+  outline: 2px solid var(--accent-2);
+  outline-offset: 3px;
+}
+.hackathon-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s var(--ease);
+}
+.hackathon-photo:hover img { transform: scale(1.07); }
+.hackathon-photo-zoom {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  background: rgba(8,8,14,0.45);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.hackathon-photo:hover .hackathon-photo-zoom,
+.hackathon-photo:focus-visible .hackathon-photo-zoom { opacity: 1; }
+.hackathon-photo-zoom i { font-size: 1.5rem; }
+
+.hackathon-lightbox {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  justify-items: center;
+  gap: clamp(0.5rem, 3vw, 2.5rem);
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  padding: clamp(1rem, 4vw, 3rem);
+  border: 0;
+  color: var(--text);
+  background: rgba(5,5,10,0.96);
+}
+.hackathon-lightbox:not([open]) { display: none; }
+.hackathon-lightbox[open] { animation: lightboxFadeIn 0.2s ease-out; }
+.hackathon-lightbox::backdrop { background: rgba(0,0,0,0.88); }
+@keyframes lightboxFadeIn { from { opacity: 0; } to { opacity: 1; } }
+.lightbox-content {
+  display: grid;
+  justify-items: center;
+  gap: 0.8rem;
+  min-width: 0;
+  max-width: min(100%, 1200px);
+  max-height: 100%;
+}
+.lightbox-image {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: calc(100vh - 7rem);
+  object-fit: contain;
+  border-radius: 10px;
+  box-shadow: 0 20px 80px rgba(0,0,0,0.5);
+}
+.lightbox-caption {
+  color: var(--text-2);
+  font-size: 0.9rem;
+  text-align: center;
+}
+.lightbox-close,
+.lightbox-nav {
+  display: grid;
+  place-items: center;
+  width: 2.8rem;
+  height: 2.8rem;
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 50%;
+  color: var(--text);
+  background: rgba(255,255,255,0.08);
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, transform 0.2s;
+}
+.lightbox-close:hover,
+.lightbox-nav:hover {
+  transform: scale(1.06);
+  border-color: var(--accent-2);
+  background: rgba(0,212,170,0.15);
+}
+.lightbox-close { position: absolute; top: 1rem; right: 1rem; }
+.lightbox-close i,
+.lightbox-nav i { font-size: 1.5rem; }
+.hackathon-lightbox button:focus-visible {
+  outline: 2px solid var(--accent-2);
+  outline-offset: 3px;
+}
+
+@media (max-width: 900px) {
+  .hackathons .hackathons-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 600px) {
+  .hackathons-grid { grid-template-columns: 1fr; }
+  .hackathon-card { min-height: 0; }
+  .hackathon-card h3 { min-height: 0; }
+  .hackathon-lightbox {
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    gap: 0.4rem;
+    padding: 1rem 0.5rem;
+  }
+  .lightbox-nav { width: 2.35rem; height: 2.35rem; }
+  .lightbox-nav i { font-size: 1.25rem; }
+  .lightbox-image { max-height: calc(100vh - 6rem); }
+}
+
+/* ===== VOLUNTEERING ===== */
+.volunteering-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+.volunteer-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  min-height: 170px;
+  padding: 1.4rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  transition: transform 0.25s var(--ease), border-color 0.25s;
+}
+.volunteer-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(108,99,255,0.35);
+}
+.volunteer-mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 54px;
+  width: 54px;
+  height: 54px;
+  border-radius: 8px;
+  color: #fff;
+  font-family: var(--font-display);
+  font-weight: 700;
+}
+.volunteer-mark i { font-size: 1.5rem; }
+.volunteer-mark-neutral { background: #7890a8; }
+.volunteer-mark-space { background: #08090c; }
+.volunteer-mark-tdev { background: #00bd68; font-size: 0.8rem; }
+.volunteer-content { min-width: 0; }
+.volunteer-card h3 { font-size: 0.95rem; }
+.volunteer-category {
+  display: inline-block;
+  margin-top: 0.55rem;
+  color: var(--text-3);
+  font-size: 0.78rem;
+}
 
 /* ===== CONTACT ===== */
 .contact-sub {
@@ -486,6 +732,15 @@ body.cursor-hover .cursor {
 .contact-actions {
   display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1.4rem;
 }
+.booking-notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  margin-top: 1.3rem;
+  color: var(--text-3);
+  font-size: 0.82rem;
+}
+.booking-notice i { color: var(--accent); font-size: 1.1rem; }
 
 .contact-panel-head {
   display: flex; align-items: center; justify-content: space-between;
@@ -579,6 +834,7 @@ footer p { font-size: 0.82rem; color: var(--text-3); }
   .image-badge { left: 50%; transform: translateX(-50%); }
   .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
   .timeline-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .hackathons-grid, .volunteering-grid { grid-template-columns: 1fr; }
   .contact-showcase { grid-template-columns: 1fr; gap: 1.5rem; }
   .projects-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
   .scroll-cue { display: none; }
